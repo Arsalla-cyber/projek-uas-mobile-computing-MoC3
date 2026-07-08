@@ -24,7 +24,7 @@ class TabCinemaList extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        'TODO (Orang 3): Tab Cinema List',
+        'Kerjain disini ya Brokk',
         style: TextStyle(color: AppColors.onSurfaceVariant),
       ),
     );

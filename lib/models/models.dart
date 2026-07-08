@@ -1,17 +1,13 @@
-// models.dart
-// Model data bersama untuk seluruh tim.
-// Jangan diubah sendiri-sendiri tanpa koordinasi — semua halaman bergantung pada struktur ini.
-
 class Movie {
   final String id;
   final String title;
   final String genre;
-  final String poster; // path asset atau URL
+  final String poster;
   final String synopsis;
-  final String duration; // contoh: '128m' atau '2h 8m'
-  final String ageRating; // contoh: '13+', 'SU', '17+'
-  final double rating; // 0.0 - 10.0
-  final String cast; // simple string, pisahkan dengan koma
+  final String duration;
+  final String ageRating;
+  final double rating;
+  final String cast;
 
   Movie({
     required this.id,

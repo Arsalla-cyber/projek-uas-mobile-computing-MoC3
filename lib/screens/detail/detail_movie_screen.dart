@@ -1,25 +1,3 @@
-// lib/screens/detail/detail_movie_screen.dart
-//
-// Halaman Detail Movie. Menerima parameter constructor `Movie movie` yang
-// dioper dari MovieCard.onTap lewat Navigator + MaterialPageRoute — SESUAI
-// kesepakatan tim (bukan lewat Provider/state management tambahan).
-//
-// Titik integrasi di halaman ini:
-//  - Tap salah satu cinema di section "Available in Cinemas"
-//    -> DetailCinemaScreen (dibuat Orang 3), kirim parameter `Cinema cinema`.
-//  - Tombol sticky "Buy Ticket" di bawah layar
-//    -> buka BuyTicketSheet (dibuat Orang 3) lewat showModalBottomSheet,
-//       kirim `Movie movie` + `Cinema cinema`.
-//
-// Catatan desain: sesuai revisi mockup tim, kartu cinema di sini TIDAK
-// menampilkan showtime (showtime baru dipilih nanti di BuyTicketSheet).
-//
-// Catatan asumsi: BuyTicketSheet butuh 1 objek Cinema, sedangkan tombol
-// "Buy Ticket" bersifat umum (bukan per-cinema). Sebagai default, kode ini
-// memakai cinema PERTAMA dari daftar "Available in Cinemas". Kalau tim mau
-// user wajib pilih cinema dulu sebelum tombol ini aktif, tinggal ganti jadi
-// state `_selectedCinema` yang di-update saat kartu cinema di-tap.
-
 import 'package:flutter/material.dart';
 import '../../data/dummy_data.dart';
 import '../../models/models.dart';
@@ -120,8 +98,7 @@ class _DetailMovieScreenState extends State<DetailMovieScreen> {
   }
 }
 
-/// Hero section: poster full-bleed sebagai backdrop + judul + info inti,
-/// mengikuti struktur "Title & Core Info Overlay" pada referensi Stitch.
+
 class _HeroSliverAppBar extends StatelessWidget {
   final Movie movie;
   const _HeroSliverAppBar({required this.movie});
@@ -138,14 +115,13 @@ class _HeroSliverAppBar extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             PosterImage(assetPath: movie.poster),
-            // Gradient gelap dari bawah supaya judul tetap terbaca
-            const DecoratedBox(
+            DecoratedBox(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Colors.transparent, Color(0xFF0A0A0B)],
-                  stops: [0.3, 1.0],
+                  colors: [Colors.transparent, AppColors.background],
+                  stops: const [0.3, 1.0],
                 ),
               ),
             ),
@@ -160,6 +136,7 @@ class _HeroSliverAppBar extends StatelessWidget {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(movie.title.toUpperCase(), style: AppTextStyles.displayLg),
                     const SizedBox(height: AppSpacing.sm),
@@ -201,7 +178,7 @@ class _PillBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
-        color: AppColors.surface.withOpacity(0.6),
+        color: AppColors.surface.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(AppRadius.full),
         border: Border.all(color: AppColors.borderSubtle),
       ),
@@ -226,9 +203,9 @@ class _GenreChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(AppRadius.full),
-        border: Border.all(color: Colors.white.withOpacity(0.2)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
       ),
       child: Text(
         label.toUpperCase(),
@@ -239,7 +216,7 @@ class _GenreChip extends StatelessWidget {
 }
 
 /// Sinopsis dengan tombol "Read More" / "Show Less" (expandable), mengikuti
-/// perilaku `.synopsis-text` pada referensi Stitch.
+
 class _SynopsisSection extends StatelessWidget {
   final String synopsis;
   final bool expanded;
@@ -367,7 +344,7 @@ class _CinemaListSection extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(AppSpacing.md),
                 decoration: BoxDecoration(
-                  color: AppColors.surfaceContainer.withOpacity(0.6),
+                  color: AppColors.surfaceContainer.withValues(alpha: 0.6),
                   borderRadius: BorderRadius.circular(AppRadius.lg),
                   border: Border.all(color: AppColors.borderSubtle),
                 ),
@@ -403,7 +380,7 @@ class _GlassIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: AppColors.surface.withOpacity(0.6),
+      color: AppColors.surface.withValues(alpha: 0.6),
       shape: const CircleBorder(),
       child: InkWell(
         customBorder: const CircleBorder(),
@@ -423,7 +400,6 @@ class _GlassIconButton extends StatelessWidget {
 }
 
 /// Tombol "Buy Ticket" yang sticky di bawah layar, dengan efek red glow
-/// sesuai referensi Stitch (`primary-glow`).
 class _StickyBuyTicketButton extends StatelessWidget {
   final VoidCallback onTap;
   const _StickyBuyTicketButton({required this.onTap});
@@ -453,7 +429,7 @@ class _StickyBuyTicketButton extends StatelessWidget {
           minimumSize: const Size.fromHeight(52),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppRadius.lg)),
           elevation: 8,
-          shadowColor: AppColors.primary.withOpacity(0.5),
+          shadowColor: AppColors.primary.withValues(alpha: 0.5),
         ),
         icon: const Icon(Icons.confirmation_number_rounded),
         label: Text('Buy Ticket', style: AppTextStyles.titleMd.copyWith(color: AppColors.onPrimary)),

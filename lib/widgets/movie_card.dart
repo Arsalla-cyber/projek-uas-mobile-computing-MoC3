@@ -16,11 +16,9 @@ import '../screens/detail/detail_movie_screen.dart';
 import '../theme/app_theme.dart';
 import 'poster_image.dart';
 
-/// Dua gaya tampilan kartu yang dipakai di layar berbeda, tapi tetap satu
-/// widget reusable supaya tidak duplikasi kode.
 enum MovieCardVariant {
-  poster, // Kartu poster besar 2:3, untuk horizontal scroll "Now Showing"
-  list, // Kartu list horizontal (thumbnail + info), untuk list vertical
+  poster,
+  list,
 }
 
 class MovieCard extends StatelessWidget {
@@ -36,7 +34,9 @@ class MovieCard extends StatelessWidget {
   void _openDetail(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => DetailMovieScreen(movie: movie)),
+      MaterialPageRoute(
+          builder: (_) => DetailMovieScreen(movie: movie)
+      ),
     );
   }
 
@@ -72,6 +72,7 @@ class _PosterCard extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             PosterImage(assetPath: movie.poster),
+
             // Gradient gelap dari bawah supaya teks tetap terbaca di atas poster
             const DecoratedBox(
               decoration: BoxDecoration(
@@ -115,7 +116,7 @@ class _PosterCard extends StatelessWidget {
   }
 }
 
-/// Kartu horizontal (thumbnail kiri + info kanan) — dipakai di section
+/// Kartu horizontal
 /// "All Movies" dan tab "Movies".
 class _ListCard extends StatelessWidget {
   final Movie movie;

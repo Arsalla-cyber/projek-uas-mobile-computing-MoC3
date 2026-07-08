@@ -25,7 +25,7 @@ class DummyData {
       id: 'm2',
       title: 'Senja di Batavia',
       genre: 'Drama / Romance',
-      poster: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&q=80',
+      poster: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&q=80',
       synopsis:
           'Kisah cinta dua sejoli di era kolonial yang terpisah oleh perang, disatukan kembali oleh sepucuk surat lama.',
       duration: '115m',
@@ -37,7 +37,7 @@ class DummyData {
       id: 'm3',
       title: 'The Silent Heist',
       genre: 'Thriller / Crime',
-      poster: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&q=80',
+      poster: 'https://images.unsplash.com/photo-1509281373149-e957c6296406?w=500&q=80',
       synopsis:
           'Tim pencuri profesional merencanakan perampokan terbesar dalam sejarah bank digital, namun satu pengkhianat mengubah segalanya.',
       duration: '132m',
@@ -61,7 +61,7 @@ class DummyData {
       id: 'm5',
       title: 'Midnight Frequency',
       genre: 'Horror / Mystery',
-      poster: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=500&q=80',
+      poster: 'https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=500&q=80',
       synopsis:
           'Sekelompok mahasiswa menemukan sinyal radio misterius yang memicu serangkaian kejadian mengerikan di kampus tua mereka.',
       duration: '102m',

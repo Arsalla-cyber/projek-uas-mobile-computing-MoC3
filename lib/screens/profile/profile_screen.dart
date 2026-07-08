@@ -23,7 +23,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        'TODO (Orang 1): Profile Screen',
+        'Lu Disini ya Be',
         style: TextStyle(color: AppColors.onSurfaceVariant),
       ),
     );
