@@ -32,6 +32,7 @@ class DetailCinemaScreen extends StatelessWidget {
         backgroundColor: AppColors.background,
         title: Text(cinema.name),
       ),
+
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(AppSpacing.lg),

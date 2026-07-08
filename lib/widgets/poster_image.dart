@@ -24,6 +24,13 @@ class PosterImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (assetPath.startsWith('http')) {
+      return Image.network(
+        assetPath,
+        fit: fit,
+        errorBuilder: (context, error, stackTrace) => _placeholder(),
+      );
+    }
     return Image.asset(
       assetPath,
       fit: fit,

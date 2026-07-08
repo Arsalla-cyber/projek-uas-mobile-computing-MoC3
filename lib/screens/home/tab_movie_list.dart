@@ -1,14 +1,7 @@
-// lib/screens/home/tab_movie_list.dart
-//
-// Konten untuk tab "Movies" pada BottomNavigationBar — menampilkan SELURUH
-// film dari dummyMovies dalam bentuk list vertical (pakai MovieCard variant
-// `list`, sama seperti section "All Movies" di tab Home).
-
 import 'package:flutter/material.dart';
 import '../../data/dummy_data.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/movie_card.dart';
-
 class TabMovieList extends StatelessWidget {
   const TabMovieList({super.key});
 
