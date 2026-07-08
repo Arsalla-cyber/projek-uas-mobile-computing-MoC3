@@ -8,7 +8,8 @@ class Movie {
   final String genre;
   final String poster; // path asset atau URL
   final String synopsis;
-  final int duration; // dalam menit
+  final String duration; // contoh: '128m' atau '2h 8m'
+  final String ageRating; // contoh: '13+', 'SU', '17+'
   final double rating; // 0.0 - 10.0
   final String cast; // simple string, pisahkan dengan koma
 
@@ -19,6 +20,7 @@ class Movie {
     required this.poster,
     required this.synopsis,
     required this.duration,
+    required this.ageRating,
     required this.rating,
     required this.cast,
   });
