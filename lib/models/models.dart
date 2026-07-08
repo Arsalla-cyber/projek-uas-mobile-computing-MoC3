@@ -1,14 +1,12 @@
-﻿// lib/models/models.dart
-
 class Movie {
   final String id;
   final String title;
   final String genre;
-  final String duration;
-  final double rating;
-  final String ageRating;
   final String poster;
   final String synopsis;
+  final String duration;
+  final String ageRating;
+  final double rating;
   final String cast;
 
   Movie({
@@ -16,6 +14,7 @@ class Movie {
     required this.title,
     required this.genre,
     required this.duration,
+    required this.ageRating,
     required this.rating,
     required this.ageRating,
     required this.poster,
