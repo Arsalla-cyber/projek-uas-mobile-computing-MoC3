@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'screens/home/home_screen.dart';
+import 'theme/app_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CineGoApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class CineGoApp extends StatelessWidget {
+  const CineGoApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'CineGo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+<<<<<<< HEAD
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -110,13 +113,19 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
+=======
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: AppColors.background,
+        primaryColor: AppColors.primary,
+        colorScheme: const ColorScheme.dark(
+          primary: AppColors.primary,
+          surface: AppColors.surface,
+          onSurface: AppColors.onSurface,
+>>>>>>> 809ca94 (arsalla section)
         ),
+        useMaterial3: true,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      home: const HomeScreen(),
     );
   }
 }

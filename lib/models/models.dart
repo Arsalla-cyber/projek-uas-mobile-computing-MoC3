@@ -9,13 +9,21 @@ class Movie {
   final String ageRating;
   final String poster;
   final String synopsis;
+<<<<<<< HEAD
   final String cast;
+=======
+  final String duration; // contoh: '128m' atau '2h 8m'
+  final String ageRating; // contoh: '13+', 'SU', '17+'
+  final double rating; // 0.0 - 10.0
+  final String cast; // simple string, pisahkan dengan koma
+>>>>>>> 809ca94 (arsalla section)
 
   Movie({
     required this.id,
     required this.title,
     required this.genre,
     required this.duration,
+    required this.ageRating,
     required this.rating,
     required this.ageRating,
     required this.poster,
