@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../../data/dummy_data.dart';
+import '../../data/dummy_data.dart' as dummy_data;
 import '../../models/models.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/movie_card.dart';
@@ -50,8 +50,8 @@ class _TabHomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Movie> nowShowing = dummyMovies.take(2).toList();
-    final List<Movie> allMovies = dummyMovies;
+    final List<Movie> nowShowing = dummy_data.dummyMovies.take(2).toList();
+    final List<Movie> allMovies = dummy_data.dummyMovies;
 
     return CustomScrollView(
       slivers: [
@@ -98,7 +98,7 @@ class _GreetingHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userName = dummyUser['name'] ?? '';
+    final userName = dummy_data.dummyUser['name'] ?? '';
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -122,11 +122,11 @@ class _GreetingHeader extends StatelessWidget {
         CircleAvatar(
           radius: 24,
           backgroundColor: AppColors.surfaceContainer,
-          backgroundImage: dummyUser['photo']!.startsWith('http')
-              ? NetworkImage(dummyUser['photo']!)
-              : AssetImage(dummyUser['photo']!) as ImageProvider,
+          backgroundImage: dummy_data.dummyUser['photo']!.startsWith('http')
+              ? NetworkImage(dummy_data.dummyUser['photo']!)
+              : AssetImage(dummy_data.dummyUser['photo']!) as ImageProvider,
           onBackgroundImageError: (_, __) {},
-          child: dummyUser['photo'] == null
+          child: dummy_data.dummyUser['photo'] == null
               ? const Icon(Icons.person, color: AppColors.onSurfaceVariant)
               : null,
         ),
