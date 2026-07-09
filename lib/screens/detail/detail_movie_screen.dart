@@ -39,7 +39,7 @@ class _DetailMovieScreenState extends State<DetailMovieScreen> {
     final movie = widget.movie;
 
     // Section "Available in Cinemas": maksimal 5 bioskop, sesuai revisi mockup.
-    final availableCinemas = DummyData.dummyCinemas.take(5).toList();
+    final availableCinemas = dummyCinemas.take(5).toList();
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -63,7 +63,7 @@ class _DetailMovieScreenState extends State<DetailMovieScreen> {
                       onToggle: () => setState(() => _synopsisExpanded = !_synopsisExpanded),
                     ),
                     const SizedBox(height: AppSpacing.lg),
-                    _CastSection(castCsv: movie.cast),
+                    _CastSection(castCsv: movie.cast.join(', ')),
                     const SizedBox(height: AppSpacing.lg),
                     _CinemaListSection(
                       cinemas: availableCinemas,
@@ -150,7 +150,7 @@ class _HeroSliverAppBar extends StatelessWidget {
                           iconColor: AppColors.gold,
                           label: movie.rating.toStringAsFixed(1),
                         ),
-                        _PillBadge(icon: Icons.schedule_rounded, label: movie.duration),
+                        _PillBadge(icon: Icons.schedule_rounded, label: movie.durationLabel),
                         _PillBadge(icon: Icons.shield_moon_rounded, label: movie.ageRating),
                         for (final genre in movie.genre.split(','))
                           _GenreChip(label: genre.trim()),
