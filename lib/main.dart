@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home/home_screen.dart';
+import 'onboarding/onboarding_screen.dart';
 import 'theme/app_theme.dart';
 
 void main() {
@@ -25,7 +25,7 @@ class CineGoApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const OnboardingScreen(),
     );
   }
 }
