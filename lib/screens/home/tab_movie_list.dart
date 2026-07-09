@@ -7,7 +7,7 @@ class TabMovieList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final movies = DummyData.dummyMovies;
+    final movies = dummyMovies;
 
     return ListView.separated(
       padding: const EdgeInsets.fromLTRB(

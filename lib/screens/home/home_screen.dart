@@ -50,8 +50,8 @@ class _TabHomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Movie> nowShowing = DummyData.dummyMovies.take(2).toList();
-    final List<Movie> allMovies = DummyData.dummyMovies;
+    final List<Movie> nowShowing = dummyMovies.take(2).toList();
+    final List<Movie> allMovies = dummyMovies;
 
     return CustomScrollView(
       slivers: [
@@ -98,7 +98,7 @@ class _GreetingHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userName = DummyData.dummyUser['name'] ?? '';
+    final userName = dummyUser['name'] ?? '';
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -122,11 +122,11 @@ class _GreetingHeader extends StatelessWidget {
         CircleAvatar(
           radius: 24,
           backgroundColor: AppColors.surfaceContainer,
-          backgroundImage: DummyData.dummyUser['photo']!.startsWith('http')
-              ? NetworkImage(DummyData.dummyUser['photo']!)
-              : AssetImage(DummyData.dummyUser['photo']!) as ImageProvider,
+          backgroundImage: dummyUser['photo']!.startsWith('http')
+              ? NetworkImage(dummyUser['photo']!)
+              : AssetImage(dummyUser['photo']!) as ImageProvider,
           onBackgroundImageError: (_, __) {},
-          child: DummyData.dummyUser['photo'] == null
+          child: dummyUser['photo'] == null
               ? const Icon(Icons.person, color: AppColors.onSurfaceVariant)
               : null,
         ),
