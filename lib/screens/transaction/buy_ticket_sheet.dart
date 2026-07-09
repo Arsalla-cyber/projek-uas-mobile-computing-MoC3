@@ -261,7 +261,7 @@ class _BuyTicketSheetState extends State<BuyTicketSheet> {
                               fontSize: 11,
                               letterSpacing: 1)),
                       Text(
-                        '\$${_totalPrice.toStringAsFixed(2)}',
+                        '\R\p${_totalPrice.toStringAsFixed(2)}',
                         style: const TextStyle(
                             color: Colors.white,
                             fontSize: 22,

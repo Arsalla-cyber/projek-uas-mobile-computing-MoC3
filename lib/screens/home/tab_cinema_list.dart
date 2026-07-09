@@ -50,11 +50,7 @@ class TabCinemaList extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 children: const [
-                  _FilterChip(label: 'All Cinemas', selected: false),
-                  SizedBox(width: 8),
                   _FilterChip(label: 'Premium IMAX', selected: true),
-                  SizedBox(width: 8),
-                  _FilterChip(label: 'Near Me', selected: false),
                 ],
               ),
             ),
