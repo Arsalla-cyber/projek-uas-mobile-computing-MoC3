@@ -93,7 +93,7 @@ class _PosterCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: AppTextStyles.titleMd,
                   ),
-                  Text("${movie.duration}", style: AppTextStyles.bodySm),
+                  Text("${movie.duration}m", style: AppTextStyles.bodySm),
                 ],
               ),
             ),

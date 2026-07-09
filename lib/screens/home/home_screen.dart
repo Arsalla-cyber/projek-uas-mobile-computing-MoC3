@@ -127,6 +127,15 @@ class _GreetingHeader extends StatelessWidget {
               : AssetImage(dummy_data.dummyUser['photo']!) as ImageProvider,
           onBackgroundImageError: (_, __) {},
           child: dummy_data.dummyUser['photo'] == null
+
+
+
+
+
+
+
+
+
               ? const Icon(Icons.person, color: AppColors.onSurfaceVariant)
               : null,
         ),

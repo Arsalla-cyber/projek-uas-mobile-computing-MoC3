@@ -1,8 +1,13 @@
-// dummy_data.dart
+﻿// dummy_data.dart - Fixed
 import '../models/models.dart';
 
+final Map<String, String> dummyUser = {
+  'name': 'Arsalla',
+  'email': 'arsalla@cinego.com',
+  'photo': 'https://ui-avatars.com/api/?name=Arsalla&background=random',
+};
+
 final List<Movie> dummyMovies = [
-  // ... data sebelumnya
   Movie(
     id: 'm1',
     title: 'Inception',
@@ -47,7 +52,6 @@ final List<Movie> dummyMovies = [
     ageRating: 'SU',
     cast: ['Zulfanny', 'Ferdian'],
   ),
-  // Tambahan Movie
   Movie(
     id: 'm5',
     title: 'Interstellar',
@@ -62,7 +66,6 @@ final List<Movie> dummyMovies = [
 ];
 
 final List<Cinema> dummyCinemas = [
-  // ... data sebelumnya
   Cinema(
     id: 'c1',
     name: 'Cinema XXI Plaza Senayan',
@@ -90,7 +93,6 @@ final List<Cinema> dummyCinemas = [
     facilities: ['Parking', 'AC', 'VIP Cinema'],
     badges: ['Macro XE'],
   ),
-  // Tambahan Cinema
   Cinema(
     id: 'c4',
     name: 'FLIX Cinema PIK Avenue',
@@ -103,7 +105,6 @@ final List<Cinema> dummyCinemas = [
 ];
 
 final List<Ticket> dummyTickets = [
-  // ... data sebelumnya
   Ticket(
     id: 't1',
     movie: dummyMovies[1], 
@@ -114,7 +115,6 @@ final List<Ticket> dummyTickets = [
     totalPrice: 120000,
     status: 'Upcoming',
   ),
-  // Tambahan Ticket
   Ticket(
     id: 't2',
     movie: dummyMovies[4], 
