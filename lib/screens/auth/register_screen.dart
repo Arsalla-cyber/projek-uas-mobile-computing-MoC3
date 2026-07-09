@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../theme/app_theme.dart';
+import 'dart:ui';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -271,7 +272,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
       prefixIcon: Icon(icon, color: AppColors.onSurfaceVariant),
       filled: true,
-      fillColor: AppColors.surfaceContainerHighest.withValues(alpha: 0.5),
+      fillColor: AppColors.surfaceContainerHigh.withValues(alpha: 0.5),
       border: UnderlineInputBorder(
         borderSide: BorderSide(color: Colors.white.withValues(alpha: 0.1), width: 2),
       ),
