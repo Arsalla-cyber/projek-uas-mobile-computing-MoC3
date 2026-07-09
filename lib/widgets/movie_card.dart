@@ -1,15 +1,3 @@
-// lib/widgets/movie_card.dart
-//
-// Kartu film reusable — dipakai di:
-//  - HomeScreen tab "Home" -> section "Now Showing"      (variant: poster)
-//  - HomeScreen tab "Home" -> section "All Movies"        (variant: list)
-//  - HomeScreen tab "Movies" (TabMovieList)                (variant: list)
-//
-// onTap akan menavigasi ke DetailMovieScreen sambil mengoper objek [Movie]
-// lewat constructor parameter (Navigator + MaterialPageRoute) — BUKAN lewat
-// state management tambahan, sesuai kesepakatan tim di dokumen pembagian
-// tugas (bagian "Aturan Kerja Git").
-
 import 'package:flutter/material.dart';
 import '../models/models.dart';
 import '../screens/detail/detail_movie_screen.dart';
@@ -105,7 +93,7 @@ class _PosterCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: AppTextStyles.titleMd,
                   ),
-                  Text("${movie.duration} min", style: AppTextStyles.bodySm),
+                  Text("${movie.duration}m", style: AppTextStyles.bodySm),
                 ],
               ),
             ),
@@ -127,7 +115,7 @@ class _ListCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSpacing.sm),
       decoration: BoxDecoration(
-        color: AppColors.surfaceContainer.withOpacity(0.6),
+        color: AppColors.surfaceContainer.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(AppRadius.lg),
         border: Border.all(color: AppColors.borderSubtle),
       ),
@@ -154,7 +142,7 @@ class _ListCard extends StatelessWidget {
                 ),
                 const SizedBox(height: AppSpacing.unit),
                 Text(
-                  '${movie.genre} • ${movie.duration}',
+                  '${movie.genre} • ${movie.duration}m',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: AppTextStyles.bodySm,
@@ -198,7 +186,7 @@ class _RatingBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.45),
+        color: Colors.black.withValues(alpha: 0.45),
         borderRadius: BorderRadius.circular(AppRadius.sm),
         border: Border.all(color: AppColors.borderSubtle),
       ),
@@ -223,7 +211,7 @@ class _GhostChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.45),
+        color: Colors.black.withValues(alpha: 0.45),
         borderRadius: BorderRadius.circular(AppRadius.sm),
         border: Border.all(color: AppColors.borderSubtle),
       ),
