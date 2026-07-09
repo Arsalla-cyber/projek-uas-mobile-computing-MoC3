@@ -17,7 +17,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     {
       'title': 'Experience the Magic',
       'subtitle': 'Book tickets for your favorite movies in seconds.',
-      'image': 'https://lh3.googleusercontent.com/aida-public/AB6AXuD2WNPZKmdTikHloQLQqFCRTGHKgEBXrEsR7Tph8psy-1LKFX6ZuApZZv1sx-flIst-VwwAAAwJBJyuh9ql5NAtxTMceklXcOJ0CacLxudiAWBOqVfsKTrGbcvwxGEyn083paz_5qEd4gcBSumKCKaZpuF7PHdkCUxnlpXl3keak0RP85NGacsuQPHF0sNJz46khGZSQGCSIRZc-q5P_e_7Cu6mvmWeu4p7LkJGSySvwQmVtltsqGc58XuSbeHVe_rDoDkr1U9GrA',
+      'image': 'assets/details/1.jpg',
     },
     {
       'title': 'Discover Movies',
@@ -26,7 +26,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     {
       'title': 'Book in Seconds',
       'subtitle': "Pick your seat, choose your showtime, and you're ready for the show.",
-      'image': 'https://lh3.googleusercontent.com/aida-public/AB6AXuACZE0WXxPEm42oOAOAMLno2obzsGC4KoYJt65Xg1ec20Zd4EcYEC4_OPZGGTekNoU1UwDx3P7RWuZq_l3l_fM4SvBH9I0_K6nx4xxoOUY4vSSq-XfiIVepSPms1QAHqHq-smnR3D2Vioo3Q-DBw4UawUFJmi-p5x5T2jWVjE2uvlppZCWfxG5ZeUOevRF4DPzGkpNrzwhPQFUvfWrS2VXjQF0IkZkIlxu-VKkMbiljxRk-JgZUb0Nf0yrSpzKyY-IuWxeZWrOHoA',
+      'image': 'assets/details/2.jpg',
     }
   ];
 
@@ -273,7 +273,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       children: [
         Opacity(
           opacity: 0.8,
-          child: Image.network(
+          child: Image.asset(
             imageUrl,
             fit: BoxFit.contain,
           ),

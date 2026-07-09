@@ -222,17 +222,17 @@ class _BannerSliderState extends State<_BannerSlider> {
 
   final List<Map<String, String>> banners = [
     {
-      'image': 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80',
+      'image': 'assets/details/3.jpg',
       'title': 'Buy 1 Get 1 Free!',
       'subtitle': 'Valid for all movies on weekends'
     },
     {
-      'image': 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&q=80',
+      'image': 'assets/details/4.jpg',
       'title': 'Popcorn & Soda Combo',
       'subtitle': 'Only \$5 with any ticket purchase'
     },
     {
-      'image': 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80',
+      'image': 'assets/details/5.jpg',
       'title': 'New Member Discount',
       'subtitle': 'Get 20% off on your first ticket'
     },
@@ -292,7 +292,7 @@ class _BannerSliderState extends State<_BannerSlider> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppRadius.lg),
                 image: DecorationImage(
-                  image: NetworkImage(banner['image']!),
+                  image: AssetImage(banner['image']!),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
                     Colors.black.withValues(alpha: 0.4),
